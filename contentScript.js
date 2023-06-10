@@ -21,7 +21,6 @@ async function contentScript() {
             </button>
         </div>
     `)
-
         document.getElementById("buttonClick").onclick = async function insert() {
             const textArea = document.querySelectorAll("textarea")[1]
             const prompt = document.querySelector("#prompt")
