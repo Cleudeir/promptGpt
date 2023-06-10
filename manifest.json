@@ -1,16 +1,13 @@
 {
-  "name": "Page Redder",
+  "name": "gptPrompt",
   "version": "2.0",
   "permissions": [
     "activeTab",
     "scripting",
     "storage"
   ],
-  "background": {
-    "service_worker": "service-worker.js"
-  },
   "action": {
-    "default_title": "Make this page red"
+    "default_title": "gptPrompt"
   },
   "manifest_version": 3,
   "content_scripts": [
