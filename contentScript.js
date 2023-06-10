@@ -12,7 +12,6 @@ async function contentScript() {
   
     if (!document.querySelector("#boxPrompt")) {
         const remember = await chrome.storage.sync.get("prompt") ||  ''
-        console.log('remember: ', remember);
         body.insertAdjacentHTML("afterbegin",`
         <div id="boxPrompt"class="p-4 gap-2 h-64 w-full flex justify-center items-start flex-col">
             <textarea id="prompt" type="text" class="h-64 w-full border border-gray-300 rounded-md px-4 py-2 text-black">${remember.prompt}</textarea>
