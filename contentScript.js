@@ -1,6 +1,6 @@
 async function contentScript() {
     let body
-    console.log('start');
+    console.log('try');
     try {
         body = document.querySelectorAll('div')[6]
         if(!body){
