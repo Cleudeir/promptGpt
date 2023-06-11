@@ -24,7 +24,11 @@ async function contentScript() {
             const textArea = document.querySelectorAll("textarea")[1]
             const prompt = document.querySelector("#prompt")
             console.log('prompt: ', prompt.value);
-            await chrome.storage.sync.set({ prompt: prompt.value })
+            try {
+                await chrome.storage.sync.set({ prompt: prompt.value })
+            } catch (error) {
+                console.log('error: ', error);                
+            }            
             textArea.value = prompt.value + "\n: "
             textArea.focus()
         }
@@ -32,6 +36,7 @@ async function contentScript() {
 }
 
 setInterval(contentScript,1500)
+
 
 
 
